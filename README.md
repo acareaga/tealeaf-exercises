@@ -1,2 +1,2 @@
 # tealeaf-exercises
-Practice exercises from TeaLeaf's Turing ruby track.
+Practice exercises from Turing ruby prep track.
