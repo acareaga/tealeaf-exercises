@@ -43,3 +43,5 @@ loop do
 end
 
 prompt("Thank you for playing. Good bye!")
+
+# Initial debug, robocop C 7 offenses
