@@ -1,19 +1,19 @@
-VALID_CHOICES = %w(rock paper scissors lizard spock)
+VALID_CHOICES = %w(rock (r) paper (p) scissors (sc) lizard (l) spock (sp))
 
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
 def win?(first, second)
-  (first == 'rock' && second == 'scissors') ||
-    (first == 'paper' && second == 'rock') ||
-    (first == 'scissors' && second == 'paper') ||
-    (first == 'rock' && second == 'lizard') ||
-    (first == 'lizard' && second == 'spock') ||
-    (first == 'scissors' && second == 'lizard') ||
-    (first == 'lizard' && second == 'paper') ||
-    (first == 'paper' && second == 'spock') ||
-    (first == 'spock' && second == 'rock')
+  (first == ('rock' or 'r') && second == ('scissors' or 'sc')) ||
+    (first == ('paper' or 'p') && second == ('rock' or 'r')) ||
+    (first == ('scissors' or 'sc') && second == ('paper' or 'p')) ||
+    (first == ('rock' or 'r') && second == ('lizard' or 'l')) ||
+    (first == ('lizard' or 'l') && second == ('spock' or 'sp')) ||
+    (first == ('scissors' or 'sc') && second == ('lizard' or 'l')) ||
+    (first == ('lizard' or 'l') && second == ('paper' or 'p')) ||
+    (first == ('paper' or 'p') && second == ('spock' or 'sp')) ||
+    (first == ('spock' or 'sp') && second == ('rock' or 'r'))
 end
 
 def display_results(player, computer)
@@ -31,6 +31,7 @@ loop do
   loop do
     prompt("Choose one: #{VALID_CHOICES.join(', ')}")
     choice = Kernel.gets().chomp()
+    break unless choice.downcase().start_with?('r' 'p' 'sc' 'sp' 'l')
 
     if VALID_CHOICES.include?(choice)
       break
