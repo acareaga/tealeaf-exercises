@@ -8,3 +8,7 @@
 # 8. Play again?
 # 9. If yes, go to #1
 # 10. Good bye!
+
+prompt "Please select a square."
+user_selection = gets.chomp
+comp_selection = 
